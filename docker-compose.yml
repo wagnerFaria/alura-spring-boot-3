@@ -1,0 +1,13 @@
+version: '3.1'
+services:
+  db:
+    image: mysql
+    container_name: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: adminadmin
+    ports:
+      - "3306:3306"
+    volumes:
+      - vollmed_api:/var/lib/mysql
+volumes:
+  vollmed_api:
