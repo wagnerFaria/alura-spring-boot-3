@@ -1,6 +1,7 @@
 package med.voll.api.controller;
 
 import jakarta.validation.Valid;
+import lombok.RequiredArgsConstructor;
 import med.voll.api.domain.medico.DadosListagemMedico;
 import med.voll.api.domain.medico.Medico;
 import med.voll.api.domain.medico.MedicoRepository;
@@ -16,10 +17,10 @@ import org.springframework.web.util.UriComponentsBuilder;
 
 @RestController
 @RequestMapping("medicos")
+@RequiredArgsConstructor
 public class MedicoController {
 
-    @Autowired
-    private MedicoRepository repository;
+    private final MedicoRepository repository;
 
     @PostMapping
     @Transactional
